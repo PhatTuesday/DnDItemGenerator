@@ -27,6 +27,24 @@ if itemType == "weapon":
 elif itemType == "armor":
     print("You got a " + armorType + "!")
 
+elif itemType == "potion":
+    print("You got a " + itemAttributes['potion'][randomnumber(0, 25)] + " potion!")
+
+elif itemType == "scroll":
+    print("You got a scroll of " + itemAttributes['scroll'][randomnumber(0, 20)])
+
+elif itemType == "ring":
+    print("You got a ring of " + itemAttributes['ring'][randomnumber(0, 11)])
+
+elif itemType == "necklace":
+    print("You got a " + itemAttributes['necklace'][randomnumber(0, 11)] + " necklace!")
+
+elif itemType == "wand":
+    print("You got a wand of " + itemAttributes['wand'][randomnumber(0, 13)])
+
+elif itemType == "component":
+    print("You got a " + itemAttributes['component'][randomnumber(0, 15)] + " component!")
+
 elif itemType == "gold":
     print("You found " + str(randomnumber(1, 250)) + " gold!")
 else:
