@@ -14,5 +14,5 @@ def randomnumber(min, max):
 randomnumber(2, 5)
 
 # I printed the result
-print(randomnumber(0, 5))
+# print(randomnumber(0, 5))
 
