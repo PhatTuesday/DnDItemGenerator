@@ -1,10 +1,9 @@
-from itemTables import itemAttributes
-from randomizer import randomnumber
+import randomizer
+from data.itemTables import itemAttributes
 
+item_types = ', '.join(itemAttributes['itemType'][:-1]) + ' or ' + itemAttributes['itemType'][-1]
+print("What random item would you like to generate?")
+print("You can choose from " + item_types + ", or type 'random' for a random item.")
+user_input = input(": ")
 
-# Returns random ItemType
-def return_item():
-    return itemAttributes['itemType'][randomnumber(0, 7)]
-
-
-print(return_item())
+print(randomizer.generator(user_input))
