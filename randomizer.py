@@ -7,26 +7,11 @@ def randomnumber(min, max):
 
 
 def get_item_type(user_input):
-    if user_input == "random":
+    item_types = ['weapon', 'armor', 'potion', 'scroll', 'ring', 'necklace', 'wand', 'component', 'gold']
+    if user_input in item_types:
+        return user_input
+    elif user_input == "random":
         return itemAttributes['itemType'][randomnumber(0, 8)]
-    elif user_input == "weapon":
-        return "weapon"
-    elif user_input == "armor":
-        return "armor"
-    elif user_input == "potion":
-        return "potion"
-    elif user_input == "scroll":
-        return "scroll"
-    elif user_input == "ring":
-        return "ring"
-    elif user_input == "necklace":
-        return "necklace"
-    elif user_input == "wand":
-        return "wand"
-    elif user_input == "component":
-        return "component"
-    elif user_input == "gold":
-        return "gold"
     else:
         return "I'm sorry, I didn't understand that."
 
