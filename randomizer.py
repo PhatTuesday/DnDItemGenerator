@@ -1,5 +1,6 @@
 import random
 from data.itemTables import itemAttributes
+from data.skillTables import stats, skills
 
 
 def randomnumber(min, max):
@@ -13,51 +14,44 @@ def get_item_type(user_input):
         fux_user_input = itemAttributes['itemType'][randomnumber(0, 8)]
         return generator(fux_user_input)
     else:
-        return None
+        return "Invalid input. Please try again."
 
 
 def get_weapon():
-    return itemAttributes['weapon'][randomnumber(0, 22)]
+    weapon = itemAttributes['weapon'][randomnumber(0, 22)]
+    additions = stats[randomnumber(0, 5)] + " + " + str(randomnumber(1, 5))
+    return weapon + " with " + additions
 
 
 def get_armor():
-    return itemAttributes['armor'][randomnumber(0, 7)]
+    armor = itemAttributes['armor'][randomnumber(0, 7)]
+    additions = skills[randomnumber(0, 5)] + " + " + str(randomnumber(1, 5))
+    return armor + " with " + additions
 
+def get_potion():
 
 def generator(user_input):
-    itemType = user_input
-    weaponType = get_weapon()
-    armorType = get_armor()
-    answer = "..."
+    item_type: str = user_input
+    weapon_type: str = get_weapon()
+    armor_type: str = get_armor()
 
-    if itemType == "weapon":
-        answer = "You got a " + weaponType + "!"
-
-    elif itemType == "armor":
-        answer = "You got a " + armorType + "!"
-
-    elif itemType == "potion":
-        answer = "You got a " + itemAttributes['potion'][randomnumber(0, 25)] + " potion!"
-
-    elif itemType == "scroll":
-        answer = "You got a scroll of " + itemAttributes['scroll'][randomnumber(0, 20)]
-
-    elif itemType == "ring":
-        answer = "You got a ring of " + itemAttributes['ring'][randomnumber(0, 11)]
-
-    elif itemType == "necklace":
-        answer = "You got a " + itemAttributes['necklace'][randomnumber(0, 11)] + " necklace!"
-
-    elif itemType == "wand":
-        answer = "You got a wand of " + itemAttributes['wand'][randomnumber(0, 13)]
-
-    elif itemType == "component":
-        answer = "You got a " + itemAttributes['component'][randomnumber(0, 15)] + " component!"
-
-    elif itemType == "gold":
-        answer = "You found " + str(randomnumber(1, 250)) + " gold!"
-
+    if item_type == "weapon":
+        return "You got a " + weapon_type + "!"
+    elif item_type == "armor":
+        return "You got a " + armor_type + "!"
+    elif item_type == "potion":
+        return "You got a " + itemAttributes['potion'][randomnumber(0, 25)] + " potion!"
+    elif item_type == "scroll":
+        return "You got a scroll of " + itemAttributes['scroll'][randomnumber(0, 20)]
+    elif item_type == "ring":
+        return "You got a ring of " + itemAttributes['ring'][randomnumber(0, 11)]
+    elif item_type == "necklace":
+        return "You got a " + itemAttributes['necklace'][randomnumber(0, 11)] + " necklace!"
+    elif item_type == "wand":
+        return "You got a wand of " + itemAttributes['wand'][randomnumber(0, 13)]
+    elif item_type == "component":
+        return "You got a " + itemAttributes['component'][randomnumber(0, 15)] + " component!"
+    elif item_type == "gold":
+        return "You found " + str(randomnumber(1, 250)) + " gold!"
     else:
-        answer = itemType
-
-    return answer
+        return "Invalid input. Please try again."
