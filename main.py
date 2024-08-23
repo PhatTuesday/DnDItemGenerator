@@ -14,4 +14,4 @@ while True:
         print("Thank you!")
         break
 
-    print(randomizer.generator(user_input))
+    print(randomizer.get_item_type(user_input))
