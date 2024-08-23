@@ -28,3 +28,20 @@ skills = [
     "Persuasion",
     "Religion",
     ]
+
+buffs = [
+    "Bless",
+    "Cure Wounds",
+    "Healing Word",
+    "Mage Armor",
+    "Shield",
+    "Mage Hand",
+    "Guidance",
+    "Resistance",
+    "Mage Armor",
+    "Health",
+]
+
+potion_types = [
+    "health", "mana", "speed", "stealth", "invisibility", "poison", "antidote", "fire", "ice", "lightning", "acid", "earth", "water", "air", "life", "death", "healing", "protection", "disruption", "teleportation"
+]

@@ -1,6 +1,6 @@
 import random
 from data.itemTables import itemAttributes
-from data.skillTables import stats, skills
+from data.skillTables import stats, skills, buffs
 
 
 def randomnumber(min, max):
@@ -28,19 +28,25 @@ def get_armor():
     additions = skills[randomnumber(0, 5)] + " + " + str(randomnumber(1, 5))
     return armor + " with " + additions
 
+
 def get_potion():
+    potion = itemAttributes['potion'][randomnumber(0, 3)]
+    additions = buffs[randomnumber(0, 9)]
+    return potion + " potion of " + additions
+
 
 def generator(user_input):
     item_type: str = user_input
     weapon_type: str = get_weapon()
     armor_type: str = get_armor()
+    potion_type: str = get_potion()
 
     if item_type == "weapon":
         return "You got a " + weapon_type + "!"
     elif item_type == "armor":
         return "You got a " + armor_type + "!"
     elif item_type == "potion":
-        return "You got a " + itemAttributes['potion'][randomnumber(0, 25)] + " potion!"
+        return "You got a " + potion_type + "!"
     elif item_type == "scroll":
         return "You got a scroll of " + itemAttributes['scroll'][randomnumber(0, 20)]
     elif item_type == "ring":
